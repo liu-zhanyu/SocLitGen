@@ -27,8 +27,6 @@ def async_generate_literature_review(query, user_id, task_id, language=None,mode
     try:
 
         # 初始化文献综述系统
-        # kb_id = "3d813266f5ad11ef96ef0242ac120006"
-        # kb_id = "7750e714049611f08aa20242ac120003"
         kb_id=KB_ID_SUMMARY
         review_system = LiteratureReviewSystem(
             user_id=user_id,
@@ -47,8 +45,8 @@ def async_generate_literature_review(query, user_id, task_id, language=None,mode
 
     except Exception as e:
         mongo_client = MongoClient(f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:{MONGO_PORT}")
-        db = mongo_client["Newbit"]
-        collection = db["review"]
+        db = mongo_client[DB]
+        collection = db[COLLECTION]
 
         # 如果在生成过程中出现错误，更新任务状态为失败(0)
         collection.update_one(

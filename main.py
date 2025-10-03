@@ -1,20 +1,10 @@
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Request, Query, Response
 import uvicorn
-from datetime import datetime
 import uuid
 from service import *
 from model import *
 import logging
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-import httpx
-import io
-from fastapi import FastAPI, HTTPException, File, UploadFile, Form, BackgroundTasks
-from motor.motor_asyncio import AsyncIOMotorClient
-from dateutil import parser
-from fastapi.responses import StreamingResponse
-from components.llm_call import *
-import tempfile
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 
 # 配置日志
 logging.basicConfig(
@@ -27,7 +17,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("literature_review_service")
 
-app = FastAPI(title="Newbit服务", description="Newbit产品API接口")
+app = FastAPI(title="SocLitGen服务", description="SocLitGen产品API接口")
 
 app.add_middleware(
     CORSMiddleware,

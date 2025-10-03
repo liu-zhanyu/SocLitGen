@@ -18,10 +18,13 @@ import concurrent.futures
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Tuple, Optional
 import jieba
-
 from components.llm_call import handler
-from components.client import *
+from components.config import *
+from components.es_search import *
 
+
+es_service = ElasticsearchService()
+es_service.connect()
 
 class LiteratureCollectionAgent:
     """

@@ -1,4 +1,4 @@
-from components.client import *
+from components.config import *
 import logging
 
 # 配置日志

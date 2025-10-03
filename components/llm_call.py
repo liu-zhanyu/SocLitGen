@@ -6,6 +6,7 @@ import requests
 from openai import OpenAI
 from zhipuai import ZhipuAI  # 新增智谱AI支持
 import json
+from components.config import *
 
 
 class LLMAPIHandler:
@@ -459,13 +460,13 @@ class LLMAPIHandler:
             return f"Unsupported provider: {provider}"
 
 
-# 使用你提供的API密钥初始化处理器
+# 初始化 LLM API Handler
 handler = LLMAPIHandler(
-    openai_api_key="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",
-    anthropic_api_key="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",
-    ark_api_key="31ea3139-4382-4a66-9668-f166967ded85",
-    siliconflow_api_key="sk-nmkifxhohubaoezcbfafmzojukdokvyvcekystkcolzxcyrc",
-    zhipuai_api_key="125b8d8dfcf89504858730426ec28748.2IW4l1oHokX0hLeA",
-    qwen_api_key="sk-8bd66618c94b46a8affeb5a4ed74af2e",
-    deepseek_api_key="sk-c6f9d1a977334e93a4939a984f2595b4"
+    openai_api_key=os.getenv("OPENAI_API_KEY"),
+    anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
+    ark_api_key=os.getenv("ARK_API_KEY"),
+    siliconflow_api_key=os.getenv("SILICONFLOW_API_KEY"),
+    zhipuai_api_key=os.getenv("ZHIPUAI_API_KEY"),
+    qwen_api_key=os.getenv("QWEN_API_KEY"),
+    deepseek_api_key=os.getenv("DEEPSEEK_API_KEY")
 )

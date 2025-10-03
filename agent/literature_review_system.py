@@ -10,7 +10,6 @@ import re
 import concurrent.futures
 from datetime import datetime
 from typing import Dict, Optional, Tuple, List
-from pymongo import MongoClient
 
 from agent.topic_planning import TopicPlanningAgent
 from agent.literature_collection import LiteratureCollectionAgent
@@ -19,12 +18,8 @@ from agent.table_generation import TableGenerationAgent
 from agent.overview_commentary import OverviewCommentaryAgent
 from agent.citation_formatting import CitationFormattingAgent
 from components.llm_call import handler
+from components.config import *
 
-# MongoDB Configuration
-MONGO_HOST = "43.134.113.96"
-MONGO_PORT = 27017
-MONGO_USER = "admin"
-MONGO_PASSWORD = "mongo321654987"
 
 
 class LiteratureReviewSystem:

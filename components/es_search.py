@@ -1,38 +1,17 @@
 import time
-from elasticsearch import Elasticsearch
-
+from components.config import *
 from typing import List, Dict, Any, Optional, Tuple, Union, Callable
 import random
 import jieba
 import requests
 import numpy as np
 import math
-
 import threading
 import traceback
 from collections import defaultdict
 
 jieba.initialize()
 
-KB_ID_PAPER = "302b50b61e7911f0822c0242ac120006"
-KB_ID_CHUNK = "684df8ee1e7511f0a9ff0242ac120006"
-KB_ID_SUMMARY="3dcd9e360c6811f081000242ac120004"
-
-# 连接参数
-ES_HOST = "http://43.134.113.96:1200"
-# ES_HOST = "http://es01:9200"
-ES_USER = "elastic"
-ES_PASSWORD = "infini_rag_flow"
-
-BGE_API_URL = "https://api.siliconflow.cn/v1/embeddings"
-
-# 默认搜索参数
-DEFAULT_INDEX = "ragflow_b7a5a24ce9ba11efa0ca0242ac120006"  # 替换为您的索引名称
-# DEFAULT_INDEX = "ragflow_optimized_vectors"  # 替换为您的索引名称
-DEFAULT_TOP_K = 30
-DEFAULT_VECTOR_WEIGHT = 0.7  # 向量搜索的权重
-DEFAULT_TEXT_WEIGHT = 0.3  # 文本搜索的权重
-DEFAULT_CHUNK_TYPE = ["raw"]  # 默认的chunk_type值
 
 
 class ElasticsearchService:
@@ -108,8 +87,7 @@ class ElasticsearchService:
             }
 
             # 随机选择API令牌
-            BGE_API_TOKEN = random.choice(["sk-nmkifxhohubaoezcbfafmzojukdokvyvcekystkcolzxcyrc",
-                                           "sk-xlmslbkpkremrpniafrcdpetyzjbxbohlqgpyqbyrhlqahod"])
+            BGE_API_TOKEN = random.choice(BGE_API_KEY)
 
             headers = {
                 "Authorization": f"Bearer {BGE_API_TOKEN}",
