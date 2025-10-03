@@ -188,35 +188,55 @@ pip install -r requirements.txt
 
 创建 `.env` 文件：
 ```
-MongoDB Configuration
+# ==================== MongoDB Configuration ====================
 MONGO_HOST=your_mongo_host
 MONGO_PORT=27017
-MONGO_USER=your_user
-MONGO_PASSWORD=your_password
+MONGO_USER=your_mongo_user
+MONGO_PASSWORD=your_mongo_password
+DB=data_analysis_v2
+COLLECTION=article_info_v2
 
-Elasticsearch Configuration
+# ==================== Elasticsearch Configuration ====================
 ES_HOST=http://your_es_host:9200
 ES_USER=elastic
-ES_PASSWORD=your_password
+ES_PASSWORD=your_es_password
+DEFAULT_INDEX=your_default_index
 
-Knowledge Base IDs
-KB_ID_PAPER=your_paper_kb_id
-KB_ID_CHUNK=your_chunk_kb_id
+# ==================== Knowledge Base IDs ====================
 KB_ID_SUMMARY=your_summary_kb_id
 
-BGE API Configuration
-BGE_API_URL=https://api.siliconflow.cn/v1/embeddings
-BGE_API_TOKEN_1=your_token_1
-BGE_API_TOKEN_2=your_token_2
+# ==================== Default ES Search Parameters ====================
+DEFAULT_TOP_K=30
+DEFAULT_VECTOR_WEIGHT=0.7
+DEFAULT_TEXT_WEIGHT=0.3
+DEFAULT_CHUNK_TYPE=["summary"]
 
-LLM API Keys
-OPENAI_API_KEY=your_openai_key
-ANTHROPIC_API_KEY=your_anthropic_key
-ARK_API_KEY=your_ark_key
-SILICONFLOW_API_KEY=your_siliconflow_key
-ZHIPUAI_API_KEY=your_zhipuai_key
-QWEN_API_KEY=your_qwen_key
-DEEPSEEK_API_KEY=your_deepseek_key
+# ==================== BGE API Configuration ====================
+BGE_API_URL=https://api.siliconflow.cn/v1/embeddings
+BGE_API_TOKEN_1=your_bge_token_1
+BGE_API_TOKEN_2=your_bge_token_2
+
+# ==================== LLM API Keys ====================
+# OpenAI
+OPENAI_API_KEY=your_openai_api_key
+
+# Anthropic (Claude)
+ANTHROPIC_API_KEY=your_anthropic_api_key
+
+# Ark (Doubao)
+ARK_API_KEY=your_ark_api_key
+
+# SiliconFlow
+SILICONFLOW_API_KEY=your_siliconflow_api_key
+
+# ZhipuAI (智谱AI)
+ZHIPUAI_API_KEY=your_zhipuai_api_key
+
+# Qwen (通义千问)
+QWEN_API_KEY=your_qwen_api_key
+
+# DeepSeek
+DEEPSEEK_API_KEY=your_deepseek_api_key
 ```
 **4. 启动服务**
 ```
