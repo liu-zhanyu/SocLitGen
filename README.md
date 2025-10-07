@@ -43,6 +43,8 @@ SocLitGen/
 │   ├── literature_classification.py        文献分类
 │   └── research_config.xlsx                研究配置
 │
+├── example/                                 示例输出
+│
 ├── main.py                                  FastAPI 服务器
 ├── service.py                               业务逻辑层
 ├── model.py                                 数据模型
@@ -163,6 +165,10 @@ RESTful API 服务器，提供生成综述和查询状态两个端点。
 
 #### model.py - 数据模型
 Pydantic 数据验证模型定义。
+
+## 示例输出
+
+`example/` 文件夹包含系统生成的示例文献综述
 
 ## 安装部署
 
