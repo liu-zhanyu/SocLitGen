@@ -328,7 +328,7 @@ class ReviewGenerationAgent:
             response = handler.call_llm(
                 provider="zhipuai",
                 prompt=prompt,
-                model="glm-4-air-250414",
+                model="glm-4.5-air",
                 max_tokens=8000
             )
             if "API call failed" not in str(response):
@@ -432,7 +432,7 @@ class ReviewGenerationAgent:
             response = handler.call_llm(
                 provider="zhipuai",
                 prompt=prompt,
-                model="glm-4-air-250414",
+                model="glm-4.5-air",
                 max_tokens=8000
             )
             if "API call failed" not in str(response):
@@ -523,7 +523,7 @@ class ReviewGenerationAgent:
             response = handler.call_llm(
                 provider="zhipuai",
                 prompt=prompt,
-                model="glm-4-air-250414",
+                model="glm-4.5-air",
                 max_tokens=8000
             )
             if "API call failed" not in str(response):
